@@ -6,7 +6,7 @@ const bare = createBareServer("/bare/");
 const app = express();
 
 // serve your css as static
-app.use(express.static(__dirname+"/static"));
+app.use(express.static(__dirname+"/static/"));
 
 
 server.on("request", (req, res) => {
@@ -18,7 +18,7 @@ server.on("request", (req, res) => {
 });
 
 server.on("upgrade", (req, socket, head) => {
- if (bare.shouldRoute(req)) {
+  if (bare.shouldRoute(req)) {
     bare.routeUpgrade(req, socket, head);
   } else {
     socket.end();
@@ -31,7 +31,7 @@ server.listen({
 
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/static/index.html");  //ur main html file goes here
+  res.sendFile(__dirname + "/static/index.html");
 });
 app.get("/index.html", (req, res) => {
   res.redirect('/');
