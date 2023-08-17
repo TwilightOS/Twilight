@@ -1,5 +1,5 @@
 const http = require('http');
-const createBareServer = require("@tomphttp/bare-server-node");
+const { createBareServer } = require('@tomphttp/bare-server-node');
 const server = http.createServer();
 const express = require("express");
 const bare = createBareServer("/bare/");
