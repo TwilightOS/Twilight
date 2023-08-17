@@ -1,0 +1,35 @@
+{
+  "name": "twilight_os",
+  "version": "0.0.1",
+  "description": "a beautiful web based os written in pure jaascript",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TwilightOS/Twilight.git"
+  },
+  "keywords": [
+    "webos",
+    "webOS",
+    "OS",
+    "javascript",
+    "proxy",
+    "games",
+    "uv"
+  ],
+  "author": "grite123",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TwilightOS/Twilight/issues"
+  },
+  "homepage": "https://github.com/TwilightOS/Twilight#readme",
+  "dependencies": {
+    "@titaniumnetwork-dev/ultraviolet": "^2.0.0",
+    "@tomphttp/bare-server-node": "^2.0.1",
+    "bare": "^0.0.2",
+    "express": "^4.18.2",
+    "node": "^20.5.0"
+  }
+}
