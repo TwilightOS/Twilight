@@ -6,7 +6,7 @@ const bare = createBareServer("/bare/");
 const app = express();
 
 // serve your css as static
-app.use(express.static(__dirname+"/static/"));
+app.use(express.static(__dirname+"/public/"));
 
 
 server.on("request", (req, res) => {
