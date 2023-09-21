@@ -1,11 +1,14 @@
 const search = document.getElementById("uv-address");
+const form = document.getElementById("uv-form");
 
-document.getElementById("uv-form").addEventListener("submit", (event) => {
+form.addEventListener("submit", (event) => {
 	event.preventDefault();
+    alert('submitted');
 	go(search.value);
 });
 
 function searchurl(url) {
+    alert('search');
 	switch (localStorage.getItem("search")) {
 		case "DuckDuckGo":
 			proxy(`https://duckduckgo.com/?q=${url}`)
@@ -23,7 +26,11 @@ function searchurl(url) {
 }
 
 function go(url) {
-	if (!isUrl(url)) searchurl(url); else {
+    alert('go');
+	if (!isUrl(url)) {
+        searchurl(url); 
+    }
+    else {
 		if (!(url.startsWith("https://") || url.startsWith("http://"))) url = "http://" + url
 		proxy(url)
 	}
@@ -35,6 +42,7 @@ function isUrl(val = "") {
 }
 
 function proxy(url) {
+    alert('proxy');
 	registerSW().then(worker => {
 		if(!worker) {
 			alert("Error: Your browser does not support service workers;");
